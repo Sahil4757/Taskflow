@@ -19,8 +19,8 @@ export const actions: Actions = {
 		});
 
 		if (error) {
-			return fail(401, {
-				error: 'Invalid email or password'
+			return fail(400, {
+				error: error.message
 			});
 		}
 

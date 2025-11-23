@@ -1,4 +1,4 @@
-import { fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 
 export const actions: Actions = {
@@ -19,14 +19,11 @@ export const actions: Actions = {
 		});
 
 		if (error) {
-			return fail(500, {
+			return fail(400, {
 				error: error.message
 			});
 		}
 
-		return {
-			success: true,
-			message: 'Check your email for the confirmation link.'
-		};
+		redirect(303, '/');
 	}
 };

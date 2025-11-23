@@ -15,9 +15,6 @@
 				{#if form?.error}
 					<div class="text-red-600 text-sm">{form.error}</div>
 				{/if}
-				{#if form?.success}
-					<div class="text-green-600 text-sm">{form.message}</div>
-				{/if}
 
 				<div>
 					<label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
